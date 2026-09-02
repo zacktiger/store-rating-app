@@ -3,6 +3,8 @@ import cors from "cors";
 import { config } from "./config.js";
 import authRoutes from "./routes/auth.js";
 import storeRoutes from "./routes/stores.js";
+import adminRoutes from "./routes/admin.js";
+import ownerRoutes from "./routes/owner.js";
 
 const app = express();
 
@@ -13,6 +15,8 @@ app.get("/api/health", (req, res) => res.json({ status: "ok" }));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/stores", storeRoutes);
+app.use("/api/admin", adminRoutes);
+app.use("/api/owner", ownerRoutes);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Route not found." });
