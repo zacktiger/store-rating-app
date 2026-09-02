@@ -4,6 +4,7 @@ import Layout from "./components/Layout.jsx";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import ChangePassword from "./pages/ChangePassword.jsx";
+import Stores from "./pages/Stores.jsx";
 
 // Where each role lands after logging in.
 const HOME_BY_ROLE = {
@@ -39,6 +40,15 @@ export default function App() {
       <Route
         path="/signup"
         element={user ? <Navigate to={HOME_BY_ROLE[user.role]} replace /> : <Signup />}
+      />
+
+      <Route
+        path="/stores"
+        element={
+          <Protected roles={["user"]}>
+            <Stores />
+          </Protected>
+        }
       />
 
       <Route
