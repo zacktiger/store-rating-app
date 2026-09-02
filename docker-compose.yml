@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: roxier-postgres
+    environment:
+      POSTGRES_USER: roxier
+      POSTGRES_PASSWORD: roxier
+      POSTGRES_DB: store_ratings
+    ports:
+      - "5435:5432"
+    volumes:
+      - roxier_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U roxier -d store_ratings"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  roxier_pgdata:
