@@ -1,0 +1,419 @@
+/* Plain hand-written CSS - no framework, so everything the app looks like is here. */
+
+:root {
+  --ink: #1c2430;
+  --muted: #6b7785;
+  --line: #dfe4ea;
+  --bg: #f4f6f9;
+  --card: #ffffff;
+  --accent: #2f6fd0;
+  --accent-dark: #24559e;
+  --danger: #c0392b;
+  --good: #1e7a4c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0 0 4px;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 28px 0 12px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* --- layout --- */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 24px;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.topbar nav {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.nav-link {
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background: var(--bg);
+}
+
+.nav-link.active {
+  background: #e8f0fc;
+  color: var(--accent-dark);
+  font-weight: 500;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.who {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.role-tag {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 1px 7px;
+  border-radius: 10px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.content,
+.page {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 28px 24px 60px;
+}
+
+.page.narrow {
+  max-width: 560px;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+
+.centered-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.centered-page .card {
+  width: 100%;
+  max-width: 420px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* --- forms --- */
+
+.form .field {
+  margin-bottom: 14px;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font: inherit;
+  background: #fff;
+}
+
+.input:focus {
+  outline: 2px solid #b9d1f4;
+  border-color: var(--accent);
+}
+
+.input-error {
+  border-color: var(--danger);
+}
+
+.field-error {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--danger);
+}
+
+.field-hint {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.form-error {
+  margin: 0 0 14px;
+  padding: 9px 12px;
+  border-radius: 6px;
+  background: #fdeceb;
+  color: var(--danger);
+  font-size: 13px;
+}
+
+.form-note {
+  margin: 0 0 14px;
+  padding: 9px 12px;
+  border-radius: 6px;
+  background: #e9f6ef;
+  color: var(--good);
+  font-size: 13px;
+}
+
+.form-footer {
+  margin: 16px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  padding: 9px 16px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--accent-dark);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.button.secondary {
+  background: #fff;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.button.secondary:hover {
+  background: var(--bg);
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+/* --- filters --- */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.filters label {
+  flex: 1;
+  min-width: 170px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.filters .input {
+  margin-top: 4px;
+}
+
+/* --- tables --- */
+
+.table-wrapper {
+  overflow-x: auto;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+/* Addresses are the only long column. Letting them wrap keeps the rest of the
+   row - including the rating stars - on screen without horizontal scrolling. */
+td.address-cell {
+  white-space: normal;
+  min-width: 220px;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+th {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  background: #fafbfc;
+}
+
+th.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+th.sortable:hover {
+  color: var(--ink);
+}
+
+.sort-arrow {
+  margin-left: 5px;
+}
+
+.empty-row {
+  text-align: center;
+  color: var(--muted);
+  padding: 26px;
+}
+
+td a {
+  color: var(--accent-dark);
+}
+
+/* --- stats --- */
+
+.stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 18px 0 8px;
+}
+
+.stat {
+  flex: 1;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.stat-value {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+/* --- detail list --- */
+
+.detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.detail-list > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+/* --- rating stars --- */
+
+.rating-picker {
+  display: inline-flex;
+  gap: 1px;
+}
+
+.star {
+  border: none;
+  background: none;
+  padding: 0 2px;
+  font-size: 20px;
+  line-height: 1;
+  color: #d3d8de;
+  cursor: pointer;
+}
+
+.star:hover {
+  color: #f0b429;
+}
+
+.star.filled {
+  color: #f0b429;
+}
