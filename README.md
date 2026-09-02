@@ -33,12 +33,12 @@ cd backend
 cp .env.example .env
 npm install
 npm run db:setup      # creates the tables and seeds demo accounts
-npm run dev           # http://localhost:4000
+npm run dev           # http://localhost:4200
 
 # 3. frontend, in a second terminal
 cd frontend
 npm install
-npm run dev           # http://localhost:5173
+npm run dev           # http://localhost:5180
 ```
 
 If you already have PostgreSQL running locally, skip Docker and point `DATABASE_URL` in
