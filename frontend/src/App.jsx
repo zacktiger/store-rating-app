@@ -6,6 +6,12 @@ import Signup from "./pages/Signup.jsx";
 import ChangePassword from "./pages/ChangePassword.jsx";
 import Stores from "./pages/Stores.jsx";
 import OwnerDashboard from "./pages/OwnerDashboard.jsx";
+import AdminDashboard from "./pages/AdminDashboard.jsx";
+import AdminUsers from "./pages/AdminUsers.jsx";
+import AdminUserDetail from "./pages/AdminUserDetail.jsx";
+import AdminAddUser from "./pages/AdminAddUser.jsx";
+import AdminStores from "./pages/AdminStores.jsx";
+import AdminAddStore from "./pages/AdminAddStore.jsx";
 
 // Where each role lands after logging in.
 const HOME_BY_ROLE = {
@@ -57,6 +63,55 @@ export default function App() {
         element={
           <Protected roles={["owner"]}>
             <OwnerDashboard />
+          </Protected>
+        }
+      />
+
+      <Route
+        path="/admin"
+        element={
+          <Protected roles={["admin"]}>
+            <AdminDashboard />
+          </Protected>
+        }
+      />
+      <Route
+        path="/admin/users"
+        element={
+          <Protected roles={["admin"]}>
+            <AdminUsers />
+          </Protected>
+        }
+      />
+      <Route
+        path="/admin/users/new"
+        element={
+          <Protected roles={["admin"]}>
+            <AdminAddUser />
+          </Protected>
+        }
+      />
+      <Route
+        path="/admin/users/:userId"
+        element={
+          <Protected roles={["admin"]}>
+            <AdminUserDetail />
+          </Protected>
+        }
+      />
+      <Route
+        path="/admin/stores"
+        element={
+          <Protected roles={["admin"]}>
+            <AdminStores />
+          </Protected>
+        }
+      />
+      <Route
+        path="/admin/stores/new"
+        element={
+          <Protected roles={["admin"]}>
+            <AdminAddStore />
           </Protected>
         }
       />
