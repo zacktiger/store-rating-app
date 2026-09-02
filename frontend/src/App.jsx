@@ -5,6 +5,7 @@ import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import ChangePassword from "./pages/ChangePassword.jsx";
 import Stores from "./pages/Stores.jsx";
+import OwnerDashboard from "./pages/OwnerDashboard.jsx";
 
 // Where each role lands after logging in.
 const HOME_BY_ROLE = {
@@ -47,6 +48,15 @@ export default function App() {
         element={
           <Protected roles={["user"]}>
             <Stores />
+          </Protected>
+        }
+      />
+
+      <Route
+        path="/owner"
+        element={
+          <Protected roles={["owner"]}>
+            <OwnerDashboard />
           </Protected>
         }
       />
