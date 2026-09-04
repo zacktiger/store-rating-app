@@ -5,6 +5,21 @@ role sees a different set of screens after signing in.
 
 Built for the FullStack Intern Coding Challenge.
 
+## Live demo
+
+**https://store-rating-app-kappa-nine.vercel.app**
+
+Sign in with any of the demo accounts below — they all use the password `Password@123`.
+
+| Role | Email |
+|------|-------|
+| Admin | admin@storerating.com |
+| Normal user | priya.deshmukh@example.com |
+| Store owner | rahul.kulkarni@example.com |
+
+The API is on a free hosting tier that sleeps when idle, so **the first request after a quiet
+period can take 30–60 seconds**. Anything after that is quick.
+
 ## Tech stack
 
 - **Backend:** Express (Node.js), plain SQL via `pg`
@@ -68,15 +83,8 @@ npm run dev           # http://localhost:5180
 If you already have PostgreSQL running locally, skip Docker and point `DATABASE_URL` in
 `backend/.env` at your own database instead.
 
-## Demo accounts
-
-`npm run db:setup` seeds one account per role. All of them use the password `Password@123`.
-
-| Role | Email |
-|------|-------|
-| Admin | admin@storerating.com |
-| Normal user | priya.deshmukh@example.com |
-| Store owner | rahul.kulkarni@example.com |
+`npm run db:setup` seeds the same three demo accounts listed at the top of this file, so a local
+copy behaves exactly like the live demo.
 
 ## Form rules
 
