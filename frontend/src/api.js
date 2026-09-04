@@ -1,4 +1,11 @@
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:4200/api";
+// Every path below starts with a "/", so a trailing slash here would produce a
+// double slash like /api//auth/login, which Express treats as a different route
+// and answers with a 404. Easy to get wrong when pasting the URL into a hosting
+// dashboard, so trim it rather than rely on it being typed correctly.
+const API_URL = (import.meta.env.VITE_API_URL || "http://localhost:4200/api").replace(
+  /\/+$/,
+  ""
+);
 
 const TOKEN_KEY = "storeRatingToken";
 
