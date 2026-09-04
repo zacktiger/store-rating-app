@@ -20,6 +20,30 @@ Built for the FullStack Intern Coding Challenge.
 | Normal user | Sign up, browse and search stores, submit and change their rating |
 | Store owner | See who rated their store and their average rating |
 
+## Screenshots
+
+**Normal user — browse, search and rate stores.** Each row shows the overall average, the number
+of ratings behind it, and the rating this user gave. Clicking a star submits or changes it.
+
+![Store list for a normal user](docs/screenshots/user-stores.png)
+
+**Admin — dashboard and user management.** The lists filter on name, email, address and role, and
+every key column sorts.
+
+![Admin dashboard](docs/screenshots/admin-dashboard.png)
+
+![Admin user list with filters](docs/screenshots/admin-users.png)
+
+**Store owner — who rated my store.** Average rating, how many ratings it is based on, and the
+list of raters.
+
+![Store owner dashboard](docs/screenshots/owner-dashboard.png)
+
+**Form validation.** Every rule is checked in the browser for quick feedback and again on the
+server, which is the one that decides.
+
+![Signup form showing validation messages](docs/screenshots/validation.png)
+
 ## Running it locally
 
 You need Node 18+ and Docker (for the database).
