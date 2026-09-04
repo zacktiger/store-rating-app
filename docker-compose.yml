@@ -7,7 +7,7 @@ services:
       POSTGRES_PASSWORD: roxier
       POSTGRES_DB: store_ratings
     ports:
-      - "5435:5432"
+      - "5436:5432"
     volumes:
       - roxier_pgdata:/var/lib/postgresql/data
     healthcheck:
